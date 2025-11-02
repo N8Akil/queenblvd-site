@@ -1,0 +1,27 @@
+# Cloudflare Pages Configuration for Queen Blvd
+name = "queenblvd"
+compatibility_date = "2025-01-02"
+
+# Pages configuration
+[pages]
+# Automatically determined from git
+branch = "master"
+
+# Build configuration
+[build]
+command = "npm run build"
+cwd = "./"
+watch_dirs = ["src"]
+
+# Build output directory
+[build.upload]
+dir = "dist"
+format = "directory"
+
+# Environment variables for production
+[env.production]
+NODE_ENV = "production"
+NEXT_TELEMETRY_DISABLED = "1"
+
+# Custom domain configuration (set via Cloudflare dashboard)
+# queenblvd.net
