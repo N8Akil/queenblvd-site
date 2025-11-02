@@ -1,0 +1,238 @@
+/**
+ * Base Styles
+ * Global typography and common elements
+ */
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-white);
+  background-color: var(--color-black);
+  line-height: var(--line-height-normal);
+}
+
+/* ========================================
+   TYPOGRAPHY
+   ======================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-white);
+}
+
+h1 {
+  font-size: var(--text-4xl);
+  line-height: var(--line-height-tight);
+}
+
+h2 {
+  font-size: var(--text-3xl);
+  line-height: var(--line-height-tight);
+}
+
+h3 {
+  font-size: var(--text-2xl);
+}
+
+h4 {
+  font-size: var(--text-xl);
+}
+
+h5 {
+  font-size: var(--text-lg);
+}
+
+h6 {
+  font-size: var(--text-base);
+}
+
+p {
+  margin: 0;
+  max-width: 75ch;
+}
+
+.text-gradient {
+  background: var(--gradient-gold);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ========================================
+   LAYOUT UTILITIES
+   ======================================== */
+
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+.section {
+  padding-top: var(--section-spacing);
+  padding-bottom: var(--section-spacing);
+  position: relative;
+}
+
+.section-hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ========================================
+   BUTTONS
+   ======================================== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: var(--space-md) var(--space-xl);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-semibold);
+  text-align: center;
+  border-radius: var(--radius-full);
+  transition: all var(--transition-base);
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary {
+  background: var(--gradient-gold);
+  color: var(--color-purple-dark);
+  box-shadow: var(--shadow-glow);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 2px solid var(--color-gold);
+  color: var(--color-gold);
+}
+
+.btn-secondary:hover {
+  background: var(--color-gold);
+  color: var(--color-purple-dark);
+}
+
+.btn-large {
+  padding: var(--space-lg) var(--space-2xl);
+  font-size: var(--text-lg);
+}
+
+/* ========================================
+   CARDS
+   ======================================== */
+
+.card {
+  background: rgba(26, 10, 46, 0.5);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(108, 58, 219, 0.2);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  transition: all var(--transition-base);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+  border-color: rgba(108, 58, 219, 0.4);
+}
+
+/* ========================================
+   UTILITIES
+   ======================================== */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn var(--transition-slow) ease-in-out;
+}
+
+.animate-slide-up {
+  animation: slideUp var(--transition-slow) ease-out;
+}
